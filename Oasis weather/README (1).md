@@ -20,8 +20,12 @@ Oasis_weather/
 
 ## Requirements
 
-- Python 3.x
-- Requests library (for fetching weather data from an API)
+-Python 3.x
+-Tkinter (usually included with Python)
+-pyperclip library for clipboard integration
+-requests library for handling HTTP requests
+-Pillow library for image processing
+-geocoder library for geographical location
 
 ## Installation
 
