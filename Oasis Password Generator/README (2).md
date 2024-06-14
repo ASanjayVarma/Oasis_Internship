@@ -8,8 +8,6 @@ Welcome to the Advanced Password Generator project, a Python-based tool designed
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Features
@@ -63,44 +61,6 @@ Welcome to the Advanced Password Generator project, a Python-based tool designed
 3. **Copy the Password:**
 
     - Click the "Copy" button to copy the generated password to the clipboard.
-
-## Contributing
-
-Contributions are welcome! If you have any suggestions or improvements, please open an issue or submit a pull request.
-
-1. **Fork the Repository:**
-
-    ```sh
-    git fork https://github.com/ASanjayVarma/advanced-password-generator.git
-    ```
-
-2. **Create a Feature Branch:**
-
-    ```sh
-    git checkout -b feature/YourFeature
-    ```
-
-3. **Commit Your Changes:**
-
-    ```sh
-    git commit -m 'Add some feature'
-    ```
-
-4. **Push to the Branch:**
-
-    ```sh
-    git push origin feature/YourFeature
-    ```
-
-5. **Open a Pull Request:**
-
-    ```sh
-    git pull-request
-    ```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 

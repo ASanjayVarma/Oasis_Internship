@@ -21,7 +21,11 @@ Oasis_weather/
 ## Requirements
 
 - Python 3.x
-- Requests library (for fetching weather data from an API)
+- Tkinter (usually included with Python)
+- pyperclip library for clipboard integration
+- requests library for handling HTTP requests
+- Pillow library for image processing
+- geocoder library for geographical location
 
 ## Installation
 
@@ -63,14 +67,6 @@ Oasis_weather/
 ## Screenshots
 
 Images used in the project can be found in the `pics` directory.
-
-## Contributing
-
-Contributions are welcome! If you would like to contribute to this project, please fork the repository and create a pull request with your changes.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Contact
 
