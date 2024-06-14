@@ -64,14 +64,6 @@ Oasis_weather/
 
 Images used in the project can be found in the `pics` directory.
 
-## Contributing
-
-Contributions are welcome! If you would like to contribute to this project, please fork the repository and create a pull request with your changes.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
 ## Contact
 
 For any questions or suggestions, feel free to contact me at [asanjayvarma18@gmail.com].
