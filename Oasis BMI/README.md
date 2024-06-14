@@ -8,8 +8,6 @@ Welcome to the BMI Calculator project, a Python-based tool designed to help user
 - [Installation](#installation)
 - [Usage](#usage)
 - [Database Setup](#database-setup)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Features
@@ -91,44 +89,6 @@ Welcome to the BMI Calculator project, a Python-based tool designed to help user
     ```
 
     - Replace `username` with your MySQL username.
-
-## Contributing
-
-Contributions are welcome! If you have any suggestions or improvements, please open an issue or submit a pull request.
-
-1. **Fork the Repository:**
-
-    ```sh
-    git fork https://github.com/ASanjayVarma/bmi-calculator.git
-    ```
-
-2. **Create a Feature Branch:**
-
-    ```sh
-    git checkout -b feature/YourFeature
-    ```
-
-3. **Commit Your Changes:**
-
-    ```sh
-    git commit -m 'Add some feature'
-    ```
-
-4. **Push to the Branch:**
-
-    ```sh
-    git push origin feature/YourFeature
-    ```
-
-5. **Open a Pull Request:**
-
-    ```sh
-    git pull-request
-    ```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
