@@ -9,7 +9,7 @@ def create_db_connection():
         conn = mysql.connector.connect(
             host="localhost",
             user="bmicalcuser",
-            password="password",
+            password="drowsydreamy",
             database="bmi_calculator"
         )
         return conn

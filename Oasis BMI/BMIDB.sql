@@ -1,5 +1,5 @@
 CREATE DATABASE bmi_calculator;
-CREATE USER 'bmicalcuser'@'localhost' IDENTIFIED BY 'password';
+CREATE USER 'bmicalcuser'@'localhost' IDENTIFIED BY 'drowsydreamy';
 GRANT ALL PRIVILEGES ON bmi_calculator.* TO 'bmicalcuser'@'localhost';
 FLUSH PRIVILEGES;
 USE bmi_calculator;
