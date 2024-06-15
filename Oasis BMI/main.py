@@ -4,7 +4,6 @@ import mysql.connector
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
-# Connect to MySQL database
 def create_db_connection():
     try:
         conn = mysql.connector.connect(
@@ -126,22 +125,18 @@ def clear_history():
             conn.close()
             messagebox.showinfo("History Cleared", "All history has been cleared.")
 
-# Initialize Tkinter
 root = tk.Tk()
 root.title("BMI Calculator")
 root.geometry("400x550")
 
-# Name
 tk.Label(root, text="Name:").pack(pady=5)
 name_entry = tk.Entry(root)
 name_entry.pack(pady=5)
 
-# Weight
 tk.Label(root, text="Weight (kg):").pack(pady=5)
 weight_entry = tk.Entry(root, width=15)
 weight_entry.pack(pady=5)
 
-# Height
 tk.Label(root, text="Height:").pack(pady=5)
 height_frame = tk.Frame(root)
 height_frame.pack(pady=5)
@@ -152,25 +147,19 @@ tk.Label(height_frame, text="Inches:").grid(row=0, column=2, padx=5)
 inches_entry = tk.Entry(height_frame, width=5)
 inches_entry.grid(row=0, column=3, padx=5)
 
-# Calculate button
 calculate_button = tk.Button(root, text="Calculate BMI", command=calculate_and_display_bmi)
 calculate_button.pack(pady=10)
 
-# Result label
 result_label = tk.Label(root, text="")
 result_label.pack(pady=10)
 
-# View history button
 history_button = tk.Button(root, text="View History", command=view_history)
 history_button.pack(pady=10)
 
-# Plot trends button
 trends_button = tk.Button(root, text="Plot Trends", command=plot_trends)
 trends_button.pack(pady=10)
 
-# Clear history button
 clear_history_button = tk.Button(root, text="Clear History", command=clear_history)
 clear_history_button.pack(pady=10)
 
-# Run the Tkinter main loop
 root.mainloop()
