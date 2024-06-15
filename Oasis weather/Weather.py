@@ -4,10 +4,10 @@ import requests
 from PIL import Image, ImageTk
 import geocoder
 
-def get_weather(city):
+def get_weather(city, units='metric'):
     api_key = "80b917f222c2526bf2b1606fb3b71b45"
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
-    complete_url = base_url + "q=" + city + "&appid=" + api_key + "&units=metric"
+    complete_url = f"{base_url}q={city}&appid={api_key}&units={units}"
     
     response = requests.get(complete_url)
     data = response.json()
@@ -22,26 +22,28 @@ def get_weather(city):
         description = weather["description"]
         wind_speed = wind["speed"]
 
+        unit_symbol = '°C' if units == 'metric' else '°F'
+        wind_speed_unit = 'm/s' if units == 'metric' else 'mph'
+
         weather_info = (
-            f"Temperature: {temperature}°C\n"
-            f"Feels Like: {feels_like}°C\n"
+            f"Temperature: {temperature}{unit_symbol}\n"
+            f"Feels Like: {feels_like}{unit_symbol}\n"
             f"Humidity: {humidity}%\n"
             f"Description: {description.capitalize()}\n"
-            f"Wind Speed: {wind_speed} m/s"
+            f"Wind Speed: {wind_speed} {wind_speed_unit}"
         )
         weather_label.config(text=weather_info)
 
-    
         if 'clear' in description.lower():
-            icon_path = "pics\sun.png"
+            icon_path = "Oasis weather\pics/sun.png"
         elif 'cloud' in description.lower():
-            icon_path = "pics\cloud.png"
+            icon_path = "Oasis weather\pics/cloud.png"
         elif 'rain' in description.lower():
-            icon_path = "pics\cloud-rain.png"
+            icon_path = "Oasis weather\pics/cloud-rain.png"
         elif 'snow' in description.lower():
-            icon_path = "pics\cloud-snow.png"
+            icon_path = "Oasis weather\pics\cloud-snow.png"
         else:
-            icon_path = "pics\circle.png"
+            icon_path = "Oasis weather\pics\circle.png"
 
         icon_image = Image.open(icon_path)
         icon_image = icon_image.resize((60, 60), Image.LANCZOS)
@@ -58,7 +60,8 @@ def get_location():
 def on_search():
     city = city_entry.get()
     if city:
-        get_weather(city)
+        units = 'metric' if unit_var.get() == "Celsius" else 'imperial'
+        get_weather(city, units)
     else:
         messagebox.showwarning("Input Error", "Please enter a city name")
 
@@ -67,18 +70,27 @@ def auto_detect_location():
     if city != "Location Not Found":
         city_entry.delete(0, tk.END)
         city_entry.insert(0, city)
-        get_weather(city)
+        units = 'metric' if unit_var.get() == "Celsius" else 'imperial'
+        get_weather(city, units)
     else:
         messagebox.showerror("Location Error", "Unable to detect location")
 
 root = tk.Tk()
 root.title("Weather Prediction App")
-root.geometry("350x400")
+root.geometry("350x450")
 
 city_label = tk.Label(root, text="Enter City:")
 city_label.pack(pady=10)
 city_entry = tk.Entry(root, width=30)
 city_entry.pack(pady=5)
+
+unit_var = tk.StringVar(value="Celsius")
+unit_frame = tk.Frame(root)
+celsius_radio = tk.Radiobutton(unit_frame, text="Celsius", variable=unit_var, value="Celsius")
+fahrenheit_radio = tk.Radiobutton(unit_frame, text="Fahrenheit", variable=unit_var, value="Fahrenheit")
+celsius_radio.pack(side=tk.LEFT)
+fahrenheit_radio.pack(side=tk.LEFT)
+unit_frame.pack(pady=5)
 
 auto_button = tk.Button(root, text="Auto Detect Location", command=auto_detect_location)
 auto_button.pack(pady=5)
